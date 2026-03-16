@@ -3,7 +3,6 @@
 {
 "FROM":
 [
-"/DMO/BOOKING_M",
 "/DMO/TRAVEL_M"
 ],
 "ASSOCIATED":

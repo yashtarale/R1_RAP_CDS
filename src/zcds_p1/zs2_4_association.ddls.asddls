@@ -9,6 +9,6 @@ on tm.travel_id = _bm.travel_id
     tm.travel_id,
     tm.agency_id,
     _bm.booking_id,
-    _bm.booking_status,
-    _bm                    //expose the association 
+    _bm.booking_status
+//    _bm                    //expose the association 
 }
