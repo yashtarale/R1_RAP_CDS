@@ -1,0 +1,20 @@
+projection implementation in class ZZGNBP_C_RTDT_CUST unique;
+strict ( 2 );
+extensible;
+use draft;
+use side effects;
+define behavior for ZZGNC_RTDT_CUST alias ZzgncRtdtCust
+extensible
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+}

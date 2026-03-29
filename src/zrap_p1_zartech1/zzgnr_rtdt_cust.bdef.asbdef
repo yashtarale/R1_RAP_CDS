@@ -1,0 +1,49 @@
+managed implementation in class ZZGNBP_R_RTDT_CUST unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZZGNR_RTDT_CUST alias ZzgnrRtdtCust
+persistent table ZRT_DT_CUST
+extensible
+draft table ZZGNRTDT_CUST_D
+etag master Changedtimestamp
+lock master total etag Changedtimestamp
+authorization master( global )
+{
+  field ( mandatory : create )
+   CustID;
+
+  field ( readonly )
+   Creationuser,
+   Lastchangeduser,
+   Creationtimestamp,
+   Changedtimestamp;
+
+  field ( readonly : update )
+   CustID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZRT_DT_CUST corresponding extensible
+  {
+    CustID = CUST_ID;
+    Name = NAME;
+    ComapnyName = COMAPNY_NAME;
+    Country = COUNTRY;
+    Mobile = MOBILE;
+    Creationuser = CREATIONUSER;
+    Lastchangeduser = LASTCHANGEDUSER;
+    Creationtimestamp = CREATIONTIMESTAMP;
+    Changedtimestamp = CHANGEDTIMESTAMP;
+  }
+
+}

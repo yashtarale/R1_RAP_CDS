@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZZGNR_RTDT_CUST'
+@MappingRole: true
+define role ZZGNR_RTDT_CUST {
+  grant select on ZZGNR_RTDT_CUST
+  where TRUE;
+}

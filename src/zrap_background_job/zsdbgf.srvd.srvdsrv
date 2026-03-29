@@ -1,0 +1,4 @@
+@EndUserText.label: 'zsd'
+define service Zsdbgf {
+  expose ZI_STUDENT_BG;
+}

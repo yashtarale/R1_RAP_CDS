@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZZGNC_RTDT_CUST'
+@MappingRole: true
+define role ZZGNC_RTDT_CUST {
+  grant select on ZZGNC_RTDT_CUST
+  where INHERITING CONDITIONS FROM ENTITY ZZGNR_RTDT_CUST REPLACING { ROOT WITH _BaseEntity };
+}

@@ -1,0 +1,16 @@
+managed implementation in class zbp_i_student_bg unique;
+strict ( 2 );
+
+define behavior for ZI_STUDENT_BG //alias <alias_name>
+persistent table zstudent_bgpf
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) roll_number;
+
+    action trigger_bg_job;
+}
