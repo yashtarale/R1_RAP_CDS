@@ -1,0 +1,7 @@
+@EndUserText.label: 'service def- ZRT_ROOT_C_SO'
+define service ZRT_SD_SALES_APP {
+  expose ZRT_ROOT_C_SO;
+  expose ZRT_C_SOIT;
+  expose ZRT_I_CUST;
+  expose ZRT_I_PROD;
+}

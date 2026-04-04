@@ -1,0 +1,66 @@
+//Behaviour def. for managed it will start with managed keyword and for unmanaged - it will be starting with unmanaged
+managed implementation in class zbp_rt_root_i_so unique;
+strict ( 2 ); //strict keyword in for sytax check and its strictly checking syntax | its version is V2
+
+define behavior for ZRT_Root_I_SO //alias <alias_name>
+persistent table zrt_dt_so
+lock master //reated to database locking to avoid simultaneous access
+authorization master ( instance )  // ffor authorization over operations
+etag master Approvedon
+{
+  create ( authorization : global );
+  update;
+  delete;
+
+  //field ( readonly ) Soid; this is defaut code - we will change it as below
+  field ( readonly : update ) Soid; //
+
+  association _Item { create; }
+
+//  to add a vaidation while creation operation
+  validation validateSalesDate on save { field Createdon ; create; }
+
+  mapping for zrt_dt_so
+  {
+  Soid = soid;
+  Buyer = buyer;
+  Createdby = createdby;
+  Createdon = createdon;
+  Approvedby = approvedby;
+  Approvedon = approvedon;
+
+
+  }
+}
+
+define behavior for ZRT_I_SOIT //alias <alias_name>
+persistent table zrt_dt_soit
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+
+//  field ( readonly ) Soid, ItemId;
+field ( readonly :update ) Soid;             //
+field ( readonly : update ) ItemId;  //
+
+  association _Header;
+
+
+  mapping for zrt_dt_soit
+  {
+
+    Soid = soid;
+    ItemId = item_id;
+    ProdId = prod_id;
+    Price = price;
+    CurrKey = curr_key;
+    Createdby = createdby;
+    Createdon = createdon;
+    Approvedby = approvedby;
+    Approvedon = approvedon;
+
+  }
+}

@@ -1,0 +1,17 @@
+@Metadata.layer: #CUSTOMER  
+annotate entity ZRT_I_CUST
+    with 
+{
+
+   @UI.identification: [{ position: 10, label: 'Buyer ID' }]
+   CustId;
+   @UI.identification: [{ position: 20, label: 'Buyer Name' }]
+   Name;
+   @UI.identification: [{ position: 30, label: 'Buyers company' }]
+   ComapnyName;
+   @UI.identification: [{ position: 40, label: 'Buyers Country' }]
+   Country;
+   @UI.identification: [{ position: 50, label: 'Buyers Mobile' }]
+   Mobile;
+
+}

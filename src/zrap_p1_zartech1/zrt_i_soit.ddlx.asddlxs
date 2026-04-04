@@ -1,0 +1,52 @@
+@Metadata.layer: #CUSTOMER 
+annotate entity ZRT_I_SOIT
+    with 
+{
+@UI.facet: [  
+              //Facet for SO item Details
+              { id: 'salesOrderItems',
+              purpose: #STANDARD,
+              position: 10,
+              label: 'sales order item details',
+              type: #IDENTIFICATION_REFERENCE }]
+              
+    @UI.lineItem: [{ position: 5, label: 'Order Number' }]
+    @UI.identification: [{ position: 5, label: 'Order Number' }]
+    Soid;
+    @UI.lineItem: [{ position: 10, label: 'Item ID' }]
+    @UI.identification: [{ position: 10, label: 'Item ID' }]
+    ItemId;
+     @UI.lineItem: [{ position: 15 , label: 'Product ID' }]
+     @UI.identification: [{ position: 15 , label: 'Product ID' }]
+     @Consumption.valueHelpDefinition: [{ entity: { name: 'ZRT_I_PROD', element: 'ProdId' } }]
+    ProdId;
+     @UI.lineItem: [{ position: 20 , label: 'Price' }]
+     @UI.identification: [{ position: 20 , label: 'Price' }]
+    Price;
+     @UI.lineItem: [{ position: 25, label: 'Currency key' }]
+     @UI.identification: [{ position: 25, label: 'Currency key' }]
+    CurrKey;
+   
+    @UI.lineItem: [{ position: 30 , label: 'Sales Person' }] 
+    @UI.selectionField: [{ position: 10 }] 
+    @EndUserText.label: 'Sales person'
+    @UI.identification: [{ position: 30 , label: 'Sales Person' }]
+   Createdby;
+   
+    @UI.lineItem: [{ position: 40 , label: 'Sales TimeStamp' }] 
+    @UI.identification: [{ position: 40 , label: 'Sales TimeStamp' }]
+   Createdon;
+   
+    @UI.lineItem: [{ position: 50 , label: 'Sales Manager' }] 
+    @UI.selectionField: [{ position: 20 }] 
+    @EndUserText.label: 'Sales Manager'
+    @UI.identification: [{ position: 50 , label: 'Sales Manager' }]
+   Approvedby;
+   
+    @UI.lineItem: [{ position: 60 , label: 'Approved Timestamp' }] 
+    @UI.identification: [{ position: 60 , label: 'Approved Timestamp' }]
+   Approvedon;
+   
+//    _Header;
+    
+}
